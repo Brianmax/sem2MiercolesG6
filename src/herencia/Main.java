@@ -1,5 +1,7 @@
 package herencia;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.function.Predicate;
 
 public class Main {
@@ -8,5 +10,8 @@ public class Main {
                 "Juan",
                 "Lazarte",
                 3000);
+
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        LinkedList<Integer> linkedList = new LinkedList<>();
     }
 }
