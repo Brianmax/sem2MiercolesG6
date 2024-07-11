@@ -79,5 +79,8 @@ public class Main {
         library1.addUser(libraryUser3);
         library1.addUser(libraryUser4);
         library1.addUser(libraryUser5);
+
+        library1.loanItem(1, "fiore_78");
+        library1.showAllItems();
     }
 }

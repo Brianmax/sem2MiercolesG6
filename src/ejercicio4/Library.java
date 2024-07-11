@@ -67,9 +67,7 @@ public class Library {
         LibraryUser libraryUser = findByUsername(username);
         if (libraryUser == null || libraryItem == null)
         {
-            int a = 10;
             System.out.println("Usuario o item no existen");
-            System.out.println(a);
             return;
         }
         if (libraryItem.isLoaned())
@@ -83,6 +81,26 @@ public class Library {
     public void returnItem(int itemId, String username)
     {
         // implementacion
+        // verificar la info
+        // cambiar el estado del item devuelto
+        // quitar el item de la lista del usuario
+    }
+    // crear un metodo que permita agregar multiples items
+    // al mismo tiempo
+    // osea que reciba una lista de items y los agregue
+    // a la biblioteca
+    // hacer un menu interactivo para poder realizar las
+    // operaciones
+    public void showAllItems()
+    {
+        for (LibraryItem item: libraryItems)
+        {
+            System.out.println("++++++++++++++++++++++");
+            if (!item.isLoaned)
+            {
+                item.showDetails();
+            }
+        }
     }
 
     private LibraryItem findItemById(int itemId)
