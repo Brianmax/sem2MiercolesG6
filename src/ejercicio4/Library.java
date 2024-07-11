@@ -36,4 +36,28 @@ public class Library {
     // reglas para agregar a un usuario:
     // el usuario no debe de tener el campo id repetido
     // el usuario no debe de tener el campo username repetido
+
+    public void addUser(LibraryUser libraryUser)
+    {
+        boolean isFound = false;
+
+        for (int i = 0; i < libraryUsers.size(); i++)
+        {
+            LibraryUser libraryUserArray = libraryUsers.get(i);
+            if (libraryUserArray.getUserId() == libraryUser.getUserId()
+                || libraryUserArray.getUsername().equals(libraryUser.getUsername()))
+            {
+                isFound = true;
+                break;
+            }
+        }
+        if (isFound)
+        {
+            System.out.println("Error en los datos del usuario");
+        }
+        else {
+            libraryUsers.add(libraryUser);
+            System.out.println("Usuario registrado correctamente");
+        }
+    }
 }
