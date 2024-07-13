@@ -1,5 +1,7 @@
 package ejercicio4;
 
+import javax.sound.midi.Soundbank;
+import javax.swing.undo.UndoableEditSupport;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -114,14 +116,38 @@ public class Main {
             else if (opcion==2)
             {
                 // insertamos un libro
+                System.out.println("Ingrese el titulo");
+                sc.nextLine();
+                String titulo = sc.nextLine();
+                System.out.println("Ingrese el Id");
+                int idItem = sc.nextInt();
+
+                System.out.println("Ingrese el autor");
+                sc.nextLine();
+                String autor = sc.nextLine();
+                Book book = new Book(titulo, idItem, false, autor);
+                library1.addItem(book);
             }
             else if (opcion==3)
             {
                 // insertar un usuario
+                System.out.println("Ingrese el username");
+                sc.nextLine();
+                String titulo = sc.nextLine();
+                System.out.println("Ingrese el id");
+                int id = sc.nextInt();
+                LibraryUser libraryUser = new LibraryUser(titulo, id, new ArrayList<LibraryItem>());
+                library1.addUser(libraryUser);
             }
             else if (opcion==4)
             {
                 // prestar un item
+                System.out.println("Ingrese el ID del item");
+                int idItem = sc.nextInt();
+                System.out.println("Ingrese el username del usuario");
+                sc.nextLine();
+                String username = sc.nextLine();
+                library1.loanItem(idItem, username);
             }
             else if (opcion==5)
             {
