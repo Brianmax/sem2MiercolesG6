@@ -1,6 +1,7 @@
 package ejercicio4;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -81,6 +82,54 @@ public class Main {
         library1.addUser(libraryUser5);
 
         library1.loanItem(1, "fiore_78");
-        library1.showAllItems();
+        //library1.showAllItems();
+        Scanner sc = new Scanner(System.in);
+        while (true)
+        {
+            System.out.println("1. Ingresar un DVD");
+            System.out.println("2. Ingresar un Libro");
+            System.out.println("3. Ingresar un usuario");
+            System.out.println("4. Prestar un item");
+            System.out.println("5. Mostrar todos los items");
+            System.out.println("0. Salir");
+
+            int opcion = sc.nextInt();
+
+            if (opcion == 1)
+            {
+                System.out.println("Ingrese el titulo");
+                sc.nextLine();
+                String titulo = sc.nextLine();
+                System.out.println("Ingrese el Id");
+                int idItem = sc.nextInt();
+
+                System.out.println("Ingrese el director");
+                sc.nextLine();
+                String director = sc.nextLine();
+                System.out.println("Ingrese la duracion");
+                int duracion = sc.nextInt();
+                DVD dvd = new DVD(titulo, idItem, false, director, duracion);
+                library1.addItem(dvd);
+            }
+            else if (opcion==2)
+            {
+                // insertamos un libro
+            }
+            else if (opcion==3)
+            {
+                // insertar un usuario
+            }
+            else if (opcion==4)
+            {
+                // prestar un item
+            }
+            else if (opcion==5)
+            {
+                library1.showAllItems();
+            }
+            else if (opcion==0) {
+                break;
+            }
+        }
     }
 }
